@@ -1,9 +1,9 @@
-FROM mcr.microsoft.com/dotnet/core/runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 
 COPY dist /app
 
 WORKDIR /app
 
-EXPOSE 80/tcp
+EXPOSE 80
 
 ENTRYPOINT ["dotnet", "ExampleApp.dll"]
