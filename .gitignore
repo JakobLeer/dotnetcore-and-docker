@@ -3,3 +3,6 @@ obj
 /.vs/ExampleApp/v16/Server/sqlite3/db.lock
 .vs
 dist
+/.snippets.swp
+/.snippets.un~
+/snippets~
