@@ -20,13 +20,7 @@ namespace ExampleApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var host = Configuration["DBHOST"] ?? "localhost";
-            var port = Configuration["DBPORT"] ?? "3306";
-            var password = Configuration["DBPASSWORD"] ?? "pwd";
-
-            services.AddDbContext<ProductDbContext>(options =>
-                options.UseMySql($"server={host};userid=root;pwd={password};port={port};database=products")
-            );
+            services.AddDbContext<ProductDbContext>();
 
             services.AddTransient<IRepository, ProductRepository>();
             services.AddControllersWithViews();
@@ -54,8 +48,6 @@ namespace ExampleApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            SeedData.EnsurePopulated(app);
         }
     }
 }
