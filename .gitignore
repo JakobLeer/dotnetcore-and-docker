@@ -6,3 +6,5 @@ dist
 /.snippets.swp
 /.snippets.un~
 /snippets~
+node_modules
+/package-lock.json
