@@ -32,6 +32,7 @@ namespace ExampleApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                SeedData.EnsurePopulated(new Models.ProductDbContext());
             }
             else
             {
