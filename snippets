@@ -1,0 +1,3 @@
+docker run -e DBHOST=mysql -e MESSAGE="Server 1" --network backend --name ea1 -p 3000:80 jakobleer/sandbox:4.0
+dotnet publish --configuration Release --output dist
+docker build -t jakobleer/sandbox:4.0 .
